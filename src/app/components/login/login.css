@@ -1,0 +1,72 @@
+.form-login {
+  background-color: #2c2c2c;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  height: 100vh;
+}
+
+.form-login form {
+  color: white;
+  background-color: rgba(14, 14, 14, 0.473);
+  box-shadow: 0px 0px 100px rgb(0, 0, 0);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 450px;
+  width: 430px;
+  border-radius: 20px;
+}
+
+.form-login H1 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: rgb(132, 80, 199);
+  margin-top: 10px;
+}
+
+.form-login input {
+  background-color: rgb(37, 37, 37);
+  color: white;
+  width: 80%;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  padding-inline: 20px;
+  font-size: 18px;
+}
+
+.form-login input:hover {
+  box-shadow: inset 0px 0px 10px rgb(84, 43, 138);
+  border: 2px solid rgb(84, 43, 138);
+}
+
+.form-login .btn {
+  background-color: rgb(84, 43, 138);
+  margin-top: 15px;
+  width: 90%;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 15px;
+  cursor: pointer;
+  padding-inline: 20px;
+  font-size: 18px;
+  color: white;
+  font-weight: bolder;
+}
+
+.form-login .btn:hover {
+  box-shadow: 0px 0px 20px rgb(84, 43, 138);
+}

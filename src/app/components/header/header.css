@@ -1,0 +1,24 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  background-color: rgb(61, 61, 61);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(255, 255, 255);
+  height: 90px;
+}
+
+.app-header .logo-imagem {
+  margin-left: 15px;
+}
+
+.app-header .titulo {
+  font-size: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+
+  p {
+    border-bottom: solid rgb(255, 255, 255) 5px;
+  }
+}

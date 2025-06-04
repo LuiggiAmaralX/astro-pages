@@ -3,6 +3,7 @@ import { Header } from '../header/header';
 import { NgOptimizedImage } from '@angular/common';
 import { BtnPrimary } from '../btn-primary/btn-primary';
 import { Footer } from '../footer/footer';
+import { Router } from '@angular/router';
 
 @Component( {
   selector: 'app-home',
@@ -13,5 +14,11 @@ import { Footer } from '../footer/footer';
   styleUrl: './home.css'
 } )
 export class Home {
+
+  constructor( private router: Router ) { }
+
+  loginPage() {
+    this.router.navigate( [ "login" ] )
+  }
 
 }

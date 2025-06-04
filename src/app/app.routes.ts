@@ -5,6 +5,10 @@ import { Login } from './components/login/login';
 export const routes: Routes = [
   {
     path: "",
+    component: Home,
+  },
+  {
+    path: "login",
     component: Login,
   }
 ];

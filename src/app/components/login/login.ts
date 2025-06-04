@@ -34,7 +34,7 @@ export class Login {
 
     if ( email === 'teste@gmail.com' && password === '12340' ) {
       this.loginError = null
-      this.router.navigate( [ 'main-background' ] )
+      this.router.navigate( [ 'crud' ] )
       return
     }
     else {

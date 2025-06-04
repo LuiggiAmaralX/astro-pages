@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<main>
+  <div class="form-container">
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <h1>NOVA TAREFA</h1>
+
+      <div class="form-group">
+        <label for="descricao">DESCRIÇÃO</label>
+        <input
+          type="text"
+          id="descricao"
+          formControlName="descricao"
+          placeholder="Insira a descrição"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="dataVencimento">DATA DE VENCIMENTO</label>
+        <input
+          type="date"
+          id="dataVencimento"
+          formControlName="dataVencimento"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="status">STATUS</label>
+        <select id="status" formControlName="status">
+          <option value="" disabled>Selecione um status</option>
+          <option value="Pendente">Pendente</option>
+          <option value="Em Andamento">Em Andamento</option>
+          <option value="Concluida">Concluída</option>
+        </select>
+      </div>
+
+      @if (taskFormError) {
+      <div class="alert alert-danger general-error">
+        <span>{{ taskFormError }}</span>
+      </div>
+      }
+
+      <button type="submit" class="btn" [disabled]="taskForm.invalid">
+        ADICIONAR TAREFA
+      </button>
+    </form>
+  </div>
+</main>
+
+<app-footer></app-footer>

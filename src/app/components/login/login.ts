@@ -4,6 +4,7 @@ import { Footer } from '../footer/footer';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MainBackground } from '../main-background/main-background';
 
 @Component( {
   selector: 'app-login',
@@ -33,7 +34,7 @@ export class Login {
 
     if ( email === 'teste@gmail.com' && password === '12340' ) {
       this.loginError = null
-      this.router.navigate( [ '' ] )
+      this.router.navigate( [ 'main-background' ] )
       return
     }
     else {

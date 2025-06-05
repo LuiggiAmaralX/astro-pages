@@ -3,7 +3,7 @@
 <main>
   <div class="form-container">
     <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
-      <h1>NOVA TAREFA</h1>
+      <h1>CADASTRAR TAREFA</h1>
 
       <div class="form-group">
         <label for="descricao">DESCRIÇÃO</label>
@@ -44,6 +44,32 @@
         ADICIONAR TAREFA
       </button>
     </form>
+  </div>
+
+  <div class="list-container">
+    <h2>LISTA DE TAREFAS</h2>
+    @if (taskList && taskList.length > 0) {
+    <table border="1px">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Data de Vencimento</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (task of taskList; track $index) {
+        <tr>
+          <td>{{ task.descricao }}</td>
+          <td>{{ task.dataVencimento }}</td>
+          <td>{{ task.status }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    } @else {
+    <p>Nenhuma tarefa cadastrada</p>
+    }
   </div>
 </main>
 

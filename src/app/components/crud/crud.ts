@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'; // CommonModule já está aqui, ótimo para o @for
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { MainBackground } from '../main-background/main-background';
+
+interface Task {
+  descricao: string;
+  dataVencimento: string;
+  status: string;
+}
 
 @Component( {
   selector: 'app-crud',
@@ -12,6 +18,7 @@ import { MainBackground } from '../main-background/main-background';
   templateUrl: './crud.html',
   styleUrl: './crud.css'
 } )
+
 export class Crud {
   taskForm = new FormGroup( {
     descricao: new FormControl( '', Validators.required ),
@@ -20,6 +27,7 @@ export class Crud {
   } );
 
   taskFormError: string | null = null;
+  taskList: Task[] = [];
 
   constructor() { }
 
@@ -27,12 +35,18 @@ export class Crud {
     this.taskFormError = null;
 
     if ( this.taskForm.invalid ) {
-      this.taskFormError = 'Por favor, preencha todos os campos obrigatórios.';
+      this.taskFormError = 'Preencha todos os campos';
       return;
     }
 
-    console.log( 'Dados do Formulário:', this.taskForm.value );
-    alert( 'Tarefa adicionada com sucesso!' );
+    const novaTarefa: Task = {
+      descricao: this.taskForm.value.descricao || '',
+      dataVencimento: this.taskForm.value.dataVencimento || '',
+      status: this.taskForm.value.status || ''
+    };
+
+    this.taskList.push( novaTarefa );
+
     this.taskForm.reset( {
       descricao: '',
       dataVencimento: '',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common'; // CommonModule já está aqui, ótimo para o @for
+import { CommonModule } from '@angular/common';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { MainBackground } from '../main-background/main-background';
@@ -27,7 +27,7 @@ export class Crud {
   } );
 
   taskFormError: string | null = null;
-  taskList: Task[] = [];
+  taskList: Task[] = []; //
 
   constructor() { }
 
@@ -35,7 +35,7 @@ export class Crud {
     this.taskFormError = null;
 
     if ( this.taskForm.invalid ) {
-      this.taskFormError = 'Preencha todos os campos';
+      this.taskFormError = 'Preencha todos os campos'; //
       return;
     }
 
@@ -45,12 +45,24 @@ export class Crud {
       status: this.taskForm.value.status || ''
     };
 
-    this.taskList.push( novaTarefa );
+    this.taskList.push( novaTarefa ); //
 
-    this.taskForm.reset( {
+    this.taskForm.reset( { //
       descricao: '',
       dataVencimento: '',
       status: ''
     } );
+  }
+
+  /////////////////////////////////////////////////////////////////////////////////////////
+
+  deleteTask( indexToDelete: number ) {
+    if ( indexToDelete >= 0 && indexToDelete < this.taskList.length ) {
+      this.taskList.splice( indexToDelete, 1 );
+      console.log( 'Tarefa excluída', this.taskList );
+
+    } else {
+      console.error( 'Índice inválido', indexToDelete );
+    }
   }
 }

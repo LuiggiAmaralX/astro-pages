@@ -13,11 +13,13 @@
   background-color: rgb(196, 195, 195);
 }
 
-.form-container h1 {
+.form-container h1,
+h2 {
   justify-content: center;
   align-items: center;
   display: flex;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .form-group {
@@ -37,4 +39,21 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.list-result {
+  padding: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-result table {
+  width: 70%;
+}
+
+.list-result table th,
+td {
 }

@@ -46,7 +46,7 @@
     </form>
   </div>
 
-  <div class="list-container">
+  <div class="list-result">
     <h2>LISTA DE TAREFAS</h2>
     @if (taskList && taskList.length > 0) {
     <table border="1px">
@@ -55,6 +55,7 @@
           <th>Descrição</th>
           <th>Data de Vencimento</th>
           <th>Status</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody>
@@ -63,6 +64,11 @@
           <td>{{ task.descricao }}</td>
           <td>{{ task.dataVencimento }}</td>
           <td>{{ task.status }}</td>
+          <td>
+            <button (click)="deleteTask($index)" class="btn btn-danger">
+              Excluir
+            </button>
+          </td>
         </tr>
         }
       </tbody>

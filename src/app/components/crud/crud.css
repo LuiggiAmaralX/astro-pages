@@ -1,7 +1,7 @@
 * {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 16px;
-  color: white;
+  color: black;
 }
 
 main {
@@ -19,6 +19,10 @@ main {
   justify-content: center;
   align-items: center;
   /*background-color: rgb(196, 195, 195);*/
+}
+
+.form-container label {
+  color: white;
 }
 
 .form-container form {
@@ -65,12 +69,14 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: black;
 }
 
 .list-result table {
   background-color: rgb(233, 232, 235);
   padding: 30px;
   width: 70%;
+  color: black;
 }
 
 button {

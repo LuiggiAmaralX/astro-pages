@@ -1,26 +1,27 @@
 import { Component } from '@angular/core';
-import { Header } from '../header/header';
-import { Footer } from '../footer/footer';
+import { Header } from '../../components/header/header';
+import { Footer } from '../../components/footer/footer';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MainBackground } from '../main-background/main-background';
+import { MainBackground } from '../../components/main-background/main-background';
+import { Loading } from '../../components/loading/loading';
 
 @Component( {
   selector: 'app-login',
   standalone: true,
-  imports: [ Header, Footer, ReactiveFormsModule, RouterModule, CommonModule ],
+  imports: [ Header, Footer, ReactiveFormsModule, RouterModule, CommonModule, Loading ],
   templateUrl: './login.html',
   styleUrl: './login.css'
 } )
 export class Login {
 
+  constructor( private router: Router ) { }
+
   loginForm = new FormGroup( {
     email: new FormControl( '', Validators.required ),
     password: new FormControl( '', Validators.required )
   } )
-
-  constructor( private router: Router ) { }
 
   loginError: string | null = null;
 

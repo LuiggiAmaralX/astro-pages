@@ -20,6 +20,9 @@ interface Task {
 } )
 
 export class Crud {
+
+  constructor() { }
+
   taskForm = new FormGroup( {
     descricao: new FormControl( '', Validators.required ),
     dataVencimento: new FormControl( '', Validators.required ),
@@ -28,8 +31,6 @@ export class Crud {
 
   taskFormError: string | null = null;
   taskList: Task[] = []; //
-
-  constructor() { }
 
   onSubmit(): void {
     this.taskFormError = null;

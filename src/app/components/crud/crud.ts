@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
-import { MainBackground } from '../main-background/main-background';
+import { Loading } from '../loading/loading';
 
 interface Task {
   descricao: string;
@@ -14,12 +14,12 @@ interface Task {
 @Component( {
   selector: 'app-crud',
   standalone: true,
-  imports: [ CommonModule, ReactiveFormsModule, Header, Footer, MainBackground ],
+  imports: [ CommonModule, ReactiveFormsModule, Header, Footer, Loading ],
   templateUrl: './crud.html',
   styleUrl: './crud.css'
 } )
 
-export class Crud {
+export class Crud implements OnInit {
 
   constructor() { }
 
@@ -65,5 +65,15 @@ export class Crud {
     } else {
       console.error( 'Índice inválido', indexToDelete );
     }
+  }
+
+  /////////////////////////////////////////////////////////////////////////////////////////
+
+  loadingOn: boolean = true;
+
+  ngOnInit(): void {
+    setTimeout( () => {
+      this.loadingOn = false;
+    }, 1500 );
   }
 }

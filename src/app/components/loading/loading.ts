@@ -7,16 +7,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './loading.html',
   styleUrl: './loading.css'
 } )
-export class Loading implements OnInit {
-
-  constructor() { }
-
-  loadingOn: boolean = true;
-
-  ngOnInit(): void {
-    setTimeout( () => {
-      this.loadingOn = false;
-    }, 1000 );
-  }
+export class Loading {
 
 }

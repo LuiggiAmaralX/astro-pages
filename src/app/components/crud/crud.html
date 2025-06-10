@@ -1,5 +1,8 @@
 <app-header></app-header>
 
+@if (loadingOn) {
+<app-loading></app-loading>
+} @else {
 <main>
   <div class="form-container">
     <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
@@ -78,5 +81,6 @@
     }
   </div>
 </main>
+}
 
 <app-footer></app-footer>

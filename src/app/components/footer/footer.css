@@ -8,6 +8,7 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
   cursor: pointer;
+  top: 0;
 }
 
 .app-footer a {

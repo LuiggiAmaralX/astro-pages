@@ -1,5 +1,8 @@
 <app-header></app-header>
 
+@if (loadingOn) {
+<app-loading></app-loading>
+} @else {
 <main>
   <div class="form-login">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -28,5 +31,6 @@
     </form>
   </div>
 </main>
+}
 
 <app-footer></app-footer>

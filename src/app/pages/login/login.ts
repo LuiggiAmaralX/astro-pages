@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
@@ -13,7 +13,7 @@ import { Loading } from '../../components/loading/loading';
   templateUrl: './login.html',
   styleUrl: './login.css'
 } )
-export class Login {
+export class Login implements OnInit {
 
   constructor( private router: Router ) { }
 
@@ -40,6 +40,16 @@ export class Login {
     else {
       this.loginError = "dados inválidos"
     }
+  }
+
+  //////////////////////////////////////////////////////////////////////
+
+  loadingOn: boolean = true;
+
+  ngOnInit(): void {
+    setTimeout( () => {
+      this.loadingOn = false;
+    }, 1500 );
   }
 
 }

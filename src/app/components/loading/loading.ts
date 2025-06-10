@@ -9,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 } )
 export class Loading implements OnInit {
 
-  loadingOn: boolean = true;
-
   constructor() { }
+
+  loadingOn: boolean = true;
 
   ngOnInit(): void {
     setTimeout( () => {

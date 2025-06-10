@@ -9,7 +9,7 @@ import { Loading } from '../../components/loading/loading';
 @Component( {
   selector: 'app-home',
   standalone: true,
-  imports: [ Header, NgOptimizedImage, BtnPrimary, Footer, Loading ],
+  imports: [ Header, NgOptimizedImage, BtnPrimary, Footer ],
   providers: [],
   templateUrl: './home.html',
   styleUrl: './home.css'

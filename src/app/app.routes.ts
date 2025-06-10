@@ -11,15 +11,15 @@ export const routes: Routes = [
   },
   {
     path: "login",
-    component: Login,
+    loadComponent: () => import( './pages/login/login' ).then( ( m ) => m.Login ),
   },
   {
     path: "crud",
-    component: Crud,
+    loadComponent: () => import( './components/crud/crud' ).then( ( m ) => m.Crud ),
   },
   {
     path: "loading",
-    component: Loading,
+    loadComponent: () => import( './components/loading/loading' ).then( ( m ) => m.Loading ),
   },
   {
     path: '**',

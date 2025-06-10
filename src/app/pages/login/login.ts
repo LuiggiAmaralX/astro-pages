@@ -4,7 +4,6 @@ import { Footer } from '../../components/footer/footer';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MainBackground } from '../../components/main-background/main-background';
 import { Loading } from '../../components/loading/loading';
 
 @Component( {

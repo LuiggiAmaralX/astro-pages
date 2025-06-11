@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Header } from '../header/header';
-import { Footer } from '../footer/footer';
-import { Loading } from '../loading/loading';
+import { Header } from '../../components/header/header';
+import { Footer } from '../../components/footer/footer';
+import { Loading } from '../../components/loading/loading';
 
 interface Task {
   descricao: string;

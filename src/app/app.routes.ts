@@ -1,13 +1,9 @@
-import { Router, Routes } from '@angular/router';
-import { Home } from './pages/home/home';
-import { Login } from './pages/login/login';
-import { Crud } from './components/crud/crud';
-import { Loading } from './components/loading/loading';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
     path: "",
-    component: Home,
+    loadComponent: () => import( './pages/home/home' ).then( ( m ) => m.Home ),
   },
   {
     path: "login",
@@ -15,7 +11,7 @@ export const routes: Routes = [
   },
   {
     path: "crud",
-    loadComponent: () => import( './components/crud/crud' ).then( ( m ) => m.Crud ),
+    loadComponent: () => import( './pages/crud/crud' ).then( ( m ) => m.Crud ),
   },
   {
     path: "loading",
